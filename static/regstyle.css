@@ -1,0 +1,103 @@
+/* style.css */
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background: linear-gradient(120deg, #6C3483 0%, #48C9B0 100%);
+    font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
+    color: #283747;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    background: #F4F6F7;
+        padding: 1.2rem 2rem;
+        border-radius: 18px;
+        box-shadow: 0 8px 24px rgba(44,62,80,0.08);
+        max-width: 320px;
+        width: 80%;
+        text-align: center;
+}
+
+.registration-form {
+    text-align: center;
+}
+
+.registration-form h2 {
+    margin-bottom: 20px;
+    color: #6C3483;
+}
+
+.input-group {
+    margin-bottom: 15px;
+    text-align: left;
+}
+
+.input-group label {
+    display: block;
+    margin-bottom: 5px;
+    color: #48C9B0;
+}
+
+.input-group input {
+    width: calc(100% - 12px);
+    padding: 8px;
+    border: 1px solid #3498DB;
+    background: #F4F6F7;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.input-group input:focus {
+    border-color: #6C3483;
+    outline: none;
+    box-shadow: 0 0 5px rgba(108, 52, 131, 0.2);
+}
+
+button {
+    background: linear-gradient(90deg, #48C9B0 0%, #6C3483 100%);
+    color: #fff;
+    padding: 12px 0;
+    border: none;
+    border-radius: 6px;
+    cursor: pointer;
+    width: 100%;
+    font-size: 1.1em;
+    font-weight: 600;
+    box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+    transition: background 0.3s;
+}
+
+button:hover {
+    background: linear-gradient(90deg, #6C3483 0%, #48C9B0 100%);
+}
+
+.login-link {
+    margin-top: 15px;
+    color: #283747;
+}
+
+.login-link a {
+    color: #6C3483;
+    text-decoration: none;
+}
+
+.login-link a:hover {
+    text-decoration: underline;
+}
+
+input[type="text"],
+input[type="email"],
+input[type="password"],
+input[type="number"] {
+    width: 100%;
+    padding: 10px 14px;
+    border: 1px solid #3498DB;
+    background: #F4F6F7;
+    border-radius: 6px;
+    box-sizing: border-box;
+    margin-bottom: 8px;
+    font-size: 1em;
+}
