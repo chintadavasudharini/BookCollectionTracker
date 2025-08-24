@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,31 +13,45 @@
             color: #283747;
             display: flex;
             justify-content: center;
-            align-items: flex-start;
-            min-height: 100vh;
+            align-items: center;
+            height: 100vh; /* Full screen height */
+            margin: 0;
         }
+
+        /* Wrapper to keep flash + container aligned in center */
+        .wrapper {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            gap: 15px;
+        }
+
+
+        /* Form container */
         .container {
             background: #F4F6F7;
             padding: 0.8rem 0.8rem;
             border-radius: 22px;
-            box-shadow: 0 4px 16px rgba(44,62,80,0.10);
+            box-shadow: 0 4px 16px rgba(44, 62, 80, 0.10);
             border: 1.5px solid #e0e0e0;
             max-width: 330px;
             width: 100%;
             text-align: center;
-            margin-top: 65px;
         }
+
         h1 {
             font-size: 2em;
             color: #6C3483;
             margin-bottom: 1em;
             font-weight: 600;
         }
+
         form {
             display: flex;
             flex-direction: column;
             gap: 0.3em;
         }
+
         label {
             text-align: left;
             font-size: 1em;
@@ -44,9 +59,11 @@
             font-weight: 500;
             margin-bottom: 0.3em;
         }
-        input, textarea {
+
+        input,
+        textarea {
             width: 92%;
-            margin: 0.15em auto 0.15em auto;
+            margin: 0.15em auto;
             padding: 0.5em 0.8em;
             border: 1px solid #3498DB;
             border-radius: 10px;
@@ -55,14 +72,17 @@
             transition: border-color 0.2s;
             display: block;
         }
-        input:focus, textarea:focus {
+
+        input:focus,
+        textarea:focus {
             border-color: #6C3483;
             outline: none;
-            box-shadow: 0 0 6px rgba(108,52,131,0.12);
+            box-shadow: 0 0 6px rgba(108, 52, 131, 0.12);
         }
+
         button {
             width: 96%;
-            margin: 0.3em auto 0.1em auto;
+            margin: 0.3em auto;
             padding: 0.7em;
             background: linear-gradient(90deg, #48C9B0 0%, #6C3483 100%);
             color: #fff;
@@ -71,37 +91,48 @@
             font-size: 1.08em;
             font-weight: 600;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+            box-shadow: 0 2px 8px rgba(44, 62, 80, 0.10);
             transition: background 0.3s;
         }
+
         button:hover {
             background: linear-gradient(90deg, #6C3483 0%, #48C9B0 100%);
         }
+
         @media (max-width: 500px) {
             .container {
                 padding: 1.2rem 0.5rem;
                 max-width: 95vw;
             }
+
             h1 {
                 font-size: 1.5em;
             }
         }
     </style>
 </head>
+
 <body>
-    <div class="container">
-        <h1>Add New Item</h1>
-        <form action="{{ url_for('add_book') }}" method="post">
-            <label for="name">Book Name</label>
-            <input type="text" id="name" name="title" required>
-            <label for="name">Author</label>
-            <input type="text" id="name" name="author" required>
-            <label for="name">Genre</label>
-            <input type="text" id="genre" name="genre" required>
-            <label for="price">Price</label>
-            <input type="number" id="price" name="price" step="0.01" required>
-            <button type="submit">Add Item</button>
-        </form>
+
+        <div class="container">
+            <h1>Add New Item</h1>
+            <form action="{{ url_for('add_book') }}" method="post">
+                <label for="title">Book Name</label>
+                <input type="text" id="title" name="title" required>
+
+                <label for="author">Author</label>
+                <input type="text" id="author" name="author" required>
+
+                <label for="genre">Genre</label>
+                <input type="text" id="genre" name="genre" required>
+
+                <label for="price">Price</label>
+                <input type="number" id="price" name="price" step="0.01" required>
+
+                <button type="submit">Add Item</button>
+            </form>
+        </div>
     </div>
 </body>
+
 </html>

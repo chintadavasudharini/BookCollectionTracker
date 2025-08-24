@@ -6,6 +6,32 @@
     <title>Update Record</title>
     <link rel="stylesheet" href="{{ url_for('static', filename='logstyle.css') }}">
     <style>
+    .flashes {
+        margin-bottom: 1em;
+        text-align: center;
+    }
+    .flash {
+        display: inline-block;
+        padding: 0.7em 1.2em;
+        border-radius: 8px;
+        margin-bottom: 0.5em;
+        font-weight: 500;
+        font-size: 1em;
+        box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+    }
+    .flash.success {
+        background: #48C9B0;
+        color: #fff;
+    }
+    .flash.danger {
+        background: #E74C3C;
+        color: #fff;
+    }
+    .flash.info {
+        background: #3498DB;
+        color: #fff;
+    }
+    
         body {
             background: linear-gradient(120deg, #6C3483 0%, #48C9B0 100%);
             font-family: 'Poppins', 'Segoe UI', Arial, sans-serif;
@@ -79,7 +105,16 @@
     </style>
 </head>
 <body>
-    <div class="container">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+                    {% if messages %}
+                        <div class="flashes">
+                            {% for category, message in messages %}
+                                <div class="flash {{ category }}">{{ message }}</div>
+                            {% endfor %}
+                        </div>
+                    {% endif %}
+                {% endwith %}
+        <div class="container">
         <h1>Update Book</h1>
         <form action="{{ url_for('update_book', id=book['id']) }}" method="post">
             <label for="title">Book Title</label>

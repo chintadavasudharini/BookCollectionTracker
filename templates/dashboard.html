@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -7,16 +8,52 @@
     <link rel="stylesheet" href="{{ url_for('static', filename='logstyle.css') }}">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <style>
+                /* Flash message styling */
+        .flashes {
+            text-align: center;
+            z-index: 1000;
+        }
+
+
+        .flashes {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .dashboard-flash {
+            display: inline-block;
+            padding: 12px 24px;
+            border-radius: 10px;
+            margin: 5px;
+            color: #fff;
+            font-weight: 600;
+            font-size: 16px;
+        }
+
+        .dashboard-flash.success {
+            background-color: #2ECC71;
+        }
+
+        .dashboard-flash.danger {
+            background-color: #E74C3C;
+        }
+
+        .dashboard-flash.info {
+            background-color: #3498DB;
+        }
+
         .dashboard-container {
             background: #fff;
             padding: 2.5rem 2rem;
             border-radius: 18px;
-            box-shadow: 0 8px 24px rgba(0,0,0,0.08);
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
             max-width: 500px;
             width: 100%;
             margin: 2rem auto;
             position: relative;
+            text-align: center;
         }
+
         .logout-btn {
             position: absolute;
             top: 1.2rem;
@@ -32,13 +69,15 @@
             justify-content: center;
             font-size: 1.3em;
             cursor: pointer;
-            box-shadow: 0 2px 8px rgba(44,62,80,0.10);
+            box-shadow: 0 2px 8px rgba(44, 62, 80, 0.10);
             transition: background 0.3s;
             z-index: 10;
         }
+
         .logout-btn:hover {
             background: linear-gradient(90deg, #48C9B0 60%, #6C3483 100%);
         }
+
         h1 {
             color: #6C3483;
             font-size: 2em;
@@ -46,6 +85,7 @@
             margin-bottom: 1em;
             text-align: center;
         }
+
         .greeting {
             color: #48C9B0;
             font-size: 1.2em;
@@ -53,16 +93,18 @@
             margin-bottom: 2em;
             font-weight: 500;
         }
+
         .card-grid {
             display: flex;
             gap: 2em;
             justify-content: center;
         }
+
         .card {
             background: linear-gradient(120deg, #6C3483 0%, #48C9B0 100%);
             color: #fff;
             border-radius: 16px;
-            box-shadow: 0 4px 16px rgba(44,62,80,0.10);
+            box-shadow: 0 4px 16px rgba(44, 62, 80, 0.10);
             width: 180px;
             height: 160px;
             display: flex;
@@ -75,32 +117,39 @@
             text-decoration: none;
             transition: transform 0.2s, box-shadow 0.2s;
         }
+
         .card:hover {
             transform: translateY(-6px) scale(1.04);
-            box-shadow: 0 8px 32px rgba(44,62,80,0.18);
+            box-shadow: 0 8px 32px rgba(44, 62, 80, 0.18);
         }
+
         .card i {
             font-size: 2.5em;
             margin-bottom: 0.5em;
         }
+
         @media (max-width: 600px) {
             .dashboard-container {
                 max-width: 98vw;
                 padding: 1.2rem 0.5rem;
             }
+
             h1 {
                 font-size: 1.3em;
             }
+
             .card-grid {
                 flex-direction: column;
                 gap: 1em;
                 align-items: center;
             }
+
             .card {
                 width: 140px;
                 height: 120px;
                 font-size: 1em;
             }
+
             .logout-btn {
                 top: 0.7rem;
                 right: 0.7rem;
@@ -111,8 +160,21 @@
         }
     </style>
 </head>
+
 <body>
+
     <div class="dashboard-container">
+                {% with messages = get_flashed_messages(with_categories=true) %}
+            {% if messages %}
+                <div class="flashes">
+                    {% for category, message in messages %}
+                        <div class="dashboard-flash {{ category }}">
+                            {{ message }}
+                        </div>
+                    {% endfor %}
+                </div>
+            {% endif %}
+        {% endwith %}
         <a href="/logout" class="logout-btn" title="Logout">
             <i class="fas fa-sign-out-alt"></i>
         </a>
@@ -132,4 +194,5 @@
         </div>
     </div>
 </body>
+
 </html>
