@@ -2,6 +2,7 @@
 
 Book Collection Tracker is a Flask-based web application that helps users manage their personal book collections with secure authentication, modern UI, and deployment-ready configurations. It’s designed to provide a smooth, user-friendly experience while ensuring data privacy and scalability.
 
+
 🚀 Features
 
 🔐 Secure User Authentication – Register and log in with per-user data isolation
@@ -14,6 +15,7 @@ Book Collection Tracker is a Flask-based web application that helps users manage
 
 ⚡ Deployment Ready – Includes requirements.txt and Procfile for hosting on Render, Heroku, or other platforms
 
+
 🛠️ Tech Stack
 
 Backend: Python, Flask
@@ -23,6 +25,7 @@ Frontend: HTML, CSS, JavaScript
 Database: SQLite (default) – can be extended to PostgreSQL or MySQL
 
 Deployment: Render, GitHub
+
 
 📂 Project Structure
 BookCollectionTracker/
@@ -43,6 +46,7 @@ BookCollectionTracker/
 │   └── view_books.html
 ├── requirements.txt     # Project dependencies
 └── Procfile             # For deployment configuration
+
 
 ⚙️ Installation & Setup
 Prerequisites
@@ -84,6 +88,7 @@ Open the browser
 
 http://localhost:5000
 
+
 🌐 Deployment
 
 The app is production-ready and can be easily deployed on Render or similar platforms.
@@ -93,6 +98,7 @@ Push the code to a GitHub repository.
 Link the repository to your Render account.
 
 The app will deploy automatically using requirements.txt and Procfile.
+
 
 🎯 Usage
 
@@ -108,9 +114,11 @@ Use the search bar to quickly find books in your collection.
 
 Log out securely when done.
 
+
 📝 License
 
 This project is licensed under the MIT License – free to use and modify.
+
 
 👩‍💻 Author
 
