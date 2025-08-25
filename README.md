@@ -31,6 +31,7 @@ Deployment: Render, GitHub
 
 📂 Project Structure
 BookCollectionTracker/
+
 │
 ├── app.py               # Main Flask app
 
