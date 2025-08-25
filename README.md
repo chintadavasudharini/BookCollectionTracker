@@ -37,28 +37,18 @@ BookCollectionTracker/
 
 
 ├── static/              # CSS and image files
-
 │   ├── logstyle.css
-
 │   ├── regstyle.css
-
-│   ├── wel.css
+│   |__ wel.css
 
 
 ├── templates/           # HTML templates
-
 │   ├── welcome.html
-
 │   ├── registration.html
-
 │   ├── login.html
-
 │   ├── dashboard.html
-
 │   ├── add.html
-
 │   ├── update.html
-
 │   └── view_books.html
 
 
