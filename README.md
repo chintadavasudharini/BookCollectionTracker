@@ -36,23 +36,37 @@ BookCollectionTracker/
 ├── app.py               # Main Flask app
 
 
+
 ├── static/              # CSS and image files
+
 │   ├── logstyle.css
+
 │   ├── regstyle.css
+
 │   |__ wel.css
 
 
+ 
 ├── templates/           # HTML templates
+
 │   ├── welcome.html
+
 │   ├── registration.html
+
 │   ├── login.html
+
 │   ├── dashboard.html
+
 │   ├── add.html
+
 │   ├── update.html
+
 │   └── view_books.html
 
 
+
 ├── requirements.txt     # Project dependencies
+
 
 
 └── Procfile             # For deployment configuration
