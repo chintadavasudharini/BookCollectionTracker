@@ -33,11 +33,12 @@ Deployment: Render, GitHub
 BookCollectionTracker/
 │
 ├── app.py               # Main Flask app
+
 ├── static/              # CSS and image files
 │   ├── logstyle.css
 │   ├── regstyle.css
 │   ├── wel.css
-│   └── image.png
+
 ├── templates/           # HTML templates
 │   ├── welcome.html
 │   ├── registration.html
@@ -46,7 +47,9 @@ BookCollectionTracker/
 │   ├── add.html
 │   ├── update.html
 │   └── view_books.html
+
 ├── requirements.txt     # Project dependencies
+
 └── Procfile             # For deployment configuration
 
 
